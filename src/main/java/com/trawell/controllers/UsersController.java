@@ -25,13 +25,5 @@ public class UsersController {
         model.addAttribute("name", name);
 		return "pages/user/home";
     }
-	@GetMapping("/login")
-	public String login (@RequestParam(name="name", required=false, defaultValue="World") String name, Locale locale, Model model) {
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		String formattedDate = dateFormat.format(date);
-        model.addAttribute("serverTime", formattedDate);
-        model.addAttribute("name", name);
-		return "pages/user/home";
-	}
+	
 }
